@@ -1,4 +1,4 @@
-# CBE WebApp
+# CBE WebApp(Compentency Based Education)
 
 A fullstack web application built with **Django** (backend) and **React + Vite** (frontend), designed for managing school operations like timetables, student showcases, events, and authentication.
 
