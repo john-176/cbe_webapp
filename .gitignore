@@ -1,0 +1,42 @@
+# --- Python/Django ---
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.log
+*.env
+.env.*
+venv/
+env/
+media/
+db.sqlite3
+staticfiles/
+*.pot
+*.mo
+
+# --- Django + React integration ---
+SERVER_SIDE/frontend/build/
+
+# --- Node/React (Vite) ---
+CLIENT_SIDE/**/node_modules/
+CLIENT_SIDE/**/dist/
+CLIENT_SIDE/**/dist-ssr/
+CLIENT_SIDE/**/.vite/
+CLIENT_SIDE/**/*.local
+
+# --- OS & Editor ---
+.DS_Store
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# --- Logs ---
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+lerna-debug.log*
+
