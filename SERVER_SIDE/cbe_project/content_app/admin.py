@@ -1,9 +1,9 @@
 # Register your models here.
 from django.contrib import admin
-from .models import Founder, ShowcaseImage, VideoShowcase, Announcement
+from .models import Achiever, ShowcaseImage, VideoShowcase, Announcement
 
 # Register your models here.
-admin.site.register(Founder)
+admin.site.register(Achiever)
 admin.site.register(ShowcaseImage)
 admin.site.register(VideoShowcase)
 admin.site.register(Announcement)

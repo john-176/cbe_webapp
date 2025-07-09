@@ -13,12 +13,12 @@ def validate_image_size(value):
     if filesize > 2 * 1024 * 1024:  # 2MB limit
         raise ValidationError("The maximum file size that can be uploaded is 2MB")
 
-class Founder(models.Model):
+class Achiever(models.Model):
     name = models.CharField(max_length=100)
     title = models.CharField(max_length=100)
     bio = models.TextField()
     image = models.ImageField(
-        upload_to='founders/',
+        upload_to='achievers/',
         null=True,
         blank=True,
         validators=[validate_image_size]

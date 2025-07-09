@@ -2,8 +2,8 @@
 from django.urls import path
 
 from .views import ( 
-                    FounderListCreate,
-                    FounderRetrieveUpdateDestroy,
+                    AchieverListCreate,
+                    AchieverRetrieveUpdateDestroy,
                     CurrentUserView,      
                     ShowcaseImageListCreate,
                     ShowcaseImageDestroy,
@@ -16,8 +16,8 @@ from .views import (
 )
 
 urlpatterns = [
-    path('achievers/', FounderListCreate.as_view(), name='achievers-list'),
-    path('achievers/<int:pk>/', FounderRetrieveUpdateDestroy.as_view(), name='achievers-detail'),
+    path('achievers/', AchieverListCreate.as_view(), name='achievers-list'), # path('achievers/', AchieverListCreate.as_view(), name='achievers-list'),
+    path('achievers/<int:pk>/', AchieverRetrieveUpdateDestroy.as_view(), name='achievers-detail'),
     path('auth/user/', CurrentUserView.as_view(), name='current-user'),
     path('showcase/images/', ShowcaseImageListCreate.as_view(), name='showcase-image-list'),
     path('showcase/images/<int:pk>/', ShowcaseImageDestroy.as_view(), name='showcase-image-detail'),

@@ -3,10 +3,10 @@ from django.shortcuts import render
 # Create your views here.
 # views.py
 from rest_framework import generics, permissions, status
-from .models import Founder, ShowcaseImage, VideoShowcase, Announcement
+from .models import Achiever, ShowcaseImage, VideoShowcase, Announcement
 from .serializers import (
-    FounderSerializer,
-    FounderCreateUpdateSerializer,
+    AchieverSerializer,
+    AchieverCreateUpdateSerializer,
     UserSerializer, 
     ShowcaseImageSerializer, 
     VideoShowcaseSerializer, 
@@ -22,41 +22,41 @@ from django.http import Http404
 from rest_framework.permissions import AllowAny
 
 
-class FounderListCreate(generics.ListCreateAPIView):
-    queryset = Founder.objects.all()
+class AchieverListCreate(generics.ListCreateAPIView):
+    queryset = Achiever.objects.all()
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     
     def get_serializer_class(self):
         if self.request.method == 'POST':
-            return FounderCreateUpdateSerializer
-        return FounderSerializer
+            return AchieverCreateUpdateSerializer
+        return AchieverSerializer
 
     def perform_create(self, serializer):
         if self.request.user.is_staff or self.request.user.is_superuser:
             serializer.save()
         else:
-            raise PermissionDenied("Only staff can create founders")
+            raise PermissionDenied("Only staff can create achievers")
 
-class FounderRetrieveUpdateDestroy(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Founder.objects.all()
+class AchieverRetrieveUpdateDestroy(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Achiever.objects.all()
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     
     def get_serializer_class(self):
         if self.request.method in ['PUT', 'PATCH']:
-            return FounderCreateUpdateSerializer
-        return FounderSerializer
+            return AchieverCreateUpdateSerializer
+        return AchieverSerializer
 
     def perform_update(self, serializer):
         if self.request.user.is_staff or self.request.user.is_superuser:
             serializer.save()
         else:
-            raise PermissionDenied("Only staff can update founders")
+            raise PermissionDenied("Only staff can update achievers")
 
     def perform_destroy(self, instance):
         if self.request.user.is_staff or self.request.user.is_superuser:
             instance.delete()
         else:
-            raise PermissionDenied("Only staff can delete founders")
+            raise PermissionDenied("Only staff can delete achievers")
 
 class CurrentUserView(APIView):
     permission_classes = [permissions.IsAuthenticated]

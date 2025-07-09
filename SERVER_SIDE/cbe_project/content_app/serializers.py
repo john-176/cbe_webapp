@@ -1,15 +1,15 @@
 # serializers.py
 from rest_framework import serializers
-from .models import Founder, ShowcaseImage, VideoShowcase, Announcement, YouTubeVideo
+from .models import Achiever, ShowcaseImage, VideoShowcase, Announcement, YouTubeVideo
 from django.conf import settings
 from django.contrib.auth import get_user_model
 import re
 
-class FounderSerializer(serializers.ModelSerializer):
+class AchieverSerializer(serializers.ModelSerializer):
     image = serializers.SerializerMethodField()
     
     class Meta:
-        model = Founder
+        model = Achiever
         fields = ['id', 'name', 'title', 'bio', 'image', 'years_active', 'created_at', 'updated_at']
         read_only_fields = ['id', 'created_at', 'updated_at']
     
@@ -39,21 +39,21 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 # serializers.py
-class FounderCreateUpdateSerializer(serializers.ModelSerializer):
+class AchieverCreateUpdateSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Founder
+        model = Achiever
         fields = ['name', 'title', 'bio', 'image', 'years_active']
     
     def create(self, validated_data):
-        # Only staff/superusers can create founders
+        # Only staff/superusers can create achievers
         if not self.context['request'].user.is_staff and not self.context['request'].user.is_superuser:
-            raise serializers.ValidationError("Only staff can create founders")
+            raise serializers.ValidationError("Only staff can create achievers")
         return super().create(validated_data)
     
     def update(self, instance, validated_data):
-        # Only staff/superusers can update founders
+        # Only staff/superusers can update achievers
         if not self.context['request'].user.is_staff and not self.context['request'].user.is_superuser:
-            raise serializers.ValidationError("Only staff can update founders")
+            raise serializers.ValidationError("Only staff can update achievers")
         return super().update(instance, validated_data)
     
     
