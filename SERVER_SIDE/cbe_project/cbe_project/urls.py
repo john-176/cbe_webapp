@@ -20,15 +20,10 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path, include, re_path
-from session_app.views import FrontendAppView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('session_app.urls')),
     path('api/', include('content_app.urls')),
     path('api/', include('timetable_app.urls')),
-    
-    # Catch-all for React frontend **after Django routes**
-    re_path(r'^(?!admin|api|media|static).*$' , FrontendAppView.as_view(), name='frontend'),
-    #re_path(r'^.*$', FrontendAppView.as_view(), name='frontend'),  # Catch all
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

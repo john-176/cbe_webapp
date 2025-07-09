@@ -22,11 +22,6 @@ import json
 from django.views.generic import View
 from django.shortcuts import render
 
-class FrontendAppView(View):
-    def get(self, request):
-        return render(request, "index.html")  # this uses TEMPLATES['DIRS']
-
-
 
 
 #ensure_csrf_cookie
