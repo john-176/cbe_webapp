@@ -1,7 +1,6 @@
 import axios from "axios";
 
 const BASE_URL = "http://localhost:8000/api";
-//const BASE_URL = "http://192.168.43.88:8000/api";
 
 const axiosInstance = axios.create({
   baseURL: BASE_URL,
@@ -104,7 +103,7 @@ export async function logout() {
 
 // Request Password Reset
 // The generic response returned from backend is designed
-//  so intentionally to avoid malicious account enumeration
+// so intentionally to avoid malicious account enumeration
 export async function requestPasswordReset(email) {
   await getCSRF();
   return axiosInstance.post(
@@ -166,7 +165,6 @@ export const timetableAPI = {
 
 //----------------------------------------------------------------------------------------------------------//
 
-
 // Achievers API Endpoints
 export const achieversAPI = {
   getAchievers: async () => 
@@ -219,8 +217,6 @@ export const achieversAPI = {
 
 //----------------------------------------------------------------------------------------------------------//
 
-
-
 // Showcase images API Endpoints
 export const showcaseAPI = {
   getShowcaseImages: async () => {
@@ -250,8 +246,6 @@ export const showcaseAPI = {
 };
 
 //----------------------------------------------------------------------------------------------------------//
-
-
 
 //VideoShowcase API Endpoints
 export const videoshowcaseAPI = {
