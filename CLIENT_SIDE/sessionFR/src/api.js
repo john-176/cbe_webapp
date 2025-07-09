@@ -175,7 +175,7 @@ export const achieversAPI = {
     });
   },
 
-  // Get single founder
+  // Get single achiever
   getAchiever: async (id) => {
     await getCSRF();
     return axiosInstance.get(`/achievers/${id}/`, {
@@ -183,7 +183,7 @@ export const achieversAPI = {
     });
   },
 
-  // Create new founder
+  // Create new achiever
   createAchiever: async (formData) => {
     await getCSRF();
     return axiosInstance.post('/achievers/', formData, {
@@ -194,7 +194,7 @@ export const achieversAPI = {
     });
   },
 
-  // Update founder
+  // Update achiever
   updateAchiever: async (id, formData) => {
     await getCSRF();
     return axiosInstance.put(`/achievers/${id}/`, formData, {
@@ -205,7 +205,7 @@ export const achieversAPI = {
     });
   },
 
-  // Delete founder
+  // Delete achiever
   deleteAchiever: async (id) => {
     await getCSRF();
     return axiosInstance.delete(`/achievers/${id}/`, {

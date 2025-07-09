@@ -10,7 +10,7 @@ CBE_WEBAPP/
 │ ├── cbe_project/ # Django project settings and URLs
 │ ├── session_app/ # Auth & user sessions
 │ ├── timetable_app/ # Timetables per category
-│ ├── content_app/ # Founders, videos, and media
+│ ├── content_app/ # Achiever, videos, and media
 │ ├── media/ # Uploaded media files
 │ └── staticfiles/ # Collected static files for deployment
 ├── CLIENT_SIDE/ # React frontend (Vite)
@@ -27,7 +27,8 @@ CBE_WEBAPP/
 
 - **Session-based Authentication** (Login, Signup, Logout)
 - **Dynamic Timetable Editor** with Real-Time Highlighting
-- **Founders & Achievers** showcase (CRUD support)
+- **
+Achievers** showcase (CRUD support)
 - **Event Videos & Uploads** (with progress bar & pagination)
 - CSRF/Security hardened for deployment
 - Modular React frontend using **Vite** + **Axios**
